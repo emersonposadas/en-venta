@@ -46,7 +46,7 @@ window.PRODUCTS = [
       ],
     },
     image: {
-      src: "",
+      src: "assets/ropero.jpg",
       accent: "#5f8f7b",
       label: "VUKU + SKUBB",
     },
@@ -151,7 +151,7 @@ window.PRODUCTS = [
       ],
     },
     image: {
-      src: "",
+      src: "assets/muebles.jpg",
       accent: "#b77845",
       label: "IKEA Set",
     },
