@@ -134,7 +134,7 @@ function renderProducts() {
 
     card.innerHTML = `
       <div class="product-media">
-        ${product.image.src ? `<img src="${product.image.src}" alt="${title}">` : ""}
+        ${product.image.src ? `<img src="${product.image.src}" alt="${title}" loading="lazy" decoding="async">` : ""}
         <div class="media-label">
           <span>${product.image.label}</span>
           <span class="price">${formatPrice(product)}</span>
