@@ -11,6 +11,8 @@ const translations = {
     available: "Disponible",
     sold: "Vendido",
     reserve: "Me interesa",
+    share: "Compartir",
+    copied: "Enlace copiado",
     footerNote: "Venta privada. Entrega o recogida segun el articulo.",
     pagesReady: "Listo para GitHub Pages",
     generalMessage: "Hola, vi tu pagina de cosas en venta y quiero hacer una consulta.",
@@ -28,6 +30,8 @@ const translations = {
     available: "Available",
     sold: "Sold",
     reserve: "I'm interested",
+    share: "Share",
+    copied: "Link copied",
     footerNote: "Private sale. Delivery or pickup depends on the item.",
     pagesReady: "Ready for GitHub Pages",
     generalMessage: "Hi, I saw your sale page and would like to ask a question.",
@@ -45,6 +49,8 @@ const translations = {
     available: "Verfuegbar",
     sold: "Verkauft",
     reserve: "Ich habe Interesse",
+    share: "Teilen",
+    copied: "Link kopiert",
     footerNote: "Privatverkauf. Uebergabe oder Abholung je nach Artikel.",
     pagesReady: "Bereit fuer GitHub Pages",
     generalMessage: "Hallo, ich habe deine Verkaufsseite gesehen und moechte etwas fragen.",
@@ -58,8 +64,16 @@ const state = {
 
 const whatsappIcon = `
   <svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-    <path d="M12 3.5a8.4 8.4 0 0 0-7.2 12.7l-1 3.6 3.7-1a8.4 8.4 0 1 0 4.5-15.3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-    <path d="M9.1 8.5c-.2.4-.4.7-.4 1.2 0 2.2 2.8 5.1 5.3 5.1.5 0 .9-.1 1.3-.4.3-.2.5-.8.6-1.1.1-.2 0-.4-.2-.5l-1.5-.7c-.2-.1-.4-.1-.6.1l-.5.6c-.1.2-.3.2-.5.1-1-.4-1.9-1.2-2.4-2.2-.1-.2-.1-.4.1-.5l.5-.5c.2-.2.2-.4.1-.6l-.7-1.5c-.1-.2-.3-.3-.5-.3-.2 0-.5.1-.6.2Z" fill="currentColor"/>
+    <path fill="currentColor" d="M12.04 3.1a8.76 8.76 0 0 0-7.52 13.25L3.4 20.9l4.66-1.08a8.75 8.75 0 1 0 3.98-16.72Zm0 1.75a7 7 0 0 1 5.97 10.66 7 7 0 0 1-9.66 2.47l-.3-.18-2.2.51.53-2.13-.2-.32A7 7 0 0 1 12.04 4.85Zm-2.5 3.4c-.17 0-.42.06-.64.3-.22.23-.84.82-.84 2 0 1.17.86 2.31.98 2.47.12.16 1.68 2.68 4.14 3.65 2.04.8 2.46.64 2.9.6.44-.04 1.43-.58 1.63-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28l-1.68-.83c-.22-.1-.4-.16-.56.12-.16.23-.64.82-.78.98-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.95-1.2-.72-.64-1.2-1.43-1.35-1.67-.14-.24-.02-.37.1-.49.11-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42l-.76-1.82c-.2-.48-.4-.5-.56-.5h-.48Z"/>
+  </svg>
+`;
+
+const shareIcon = `
+  <svg class="share-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path d="M8.7 10.6 15.2 7M8.7 13.4l6.5 3.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="6.5" cy="12" r="2.7" fill="none" stroke="currentColor" stroke-width="2"/>
+    <circle cx="17.5" cy="6" r="2.7" fill="none" stroke="currentColor" stroke-width="2"/>
+    <circle cx="17.5" cy="18" r="2.7" fill="none" stroke="currentColor" stroke-width="2"/>
   </svg>
 `;
 
@@ -102,6 +116,11 @@ function whatsappUrl(message) {
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }
 
+function productUrl(product) {
+  const baseUrl = `${window.location.origin}${window.location.pathname}`;
+  return `${baseUrl}#${product.id}`;
+}
+
 function renderStaticText() {
   document.documentElement.lang = state.lang;
   document.querySelectorAll("[data-i18n]").forEach((node) => {
@@ -125,6 +144,7 @@ function renderProducts() {
     const isSold = product.sold === true;
     const title = productText(product, "title");
     const card = document.createElement("article");
+    card.id = product.id;
     card.className = `product-card ${isSold ? "sold" : ""}`;
     card.style.setProperty("--accent", product.image.accent);
 
@@ -155,6 +175,9 @@ function renderProducts() {
         </ul>
         <div class="product-actions">
           ${primaryButton}
+          <button class="button button-secondary share-button" type="button" data-share-id="${product.id}">
+            ${shareIcon}<span>${t("share")}</span>
+          </button>
         </div>
       </div>
     `;
@@ -170,8 +193,51 @@ function setLanguage(lang) {
   renderProducts();
 }
 
+async function shareProduct(productId) {
+  const product = window.PRODUCTS.find((item) => item.id === productId);
+  if (!product) return;
+
+  const title = productText(product, "title");
+  const text = productText(product, "summary");
+  const url = productUrl(product);
+
+  if (navigator.share) {
+    await navigator.share({ title, text, url });
+    return;
+  }
+
+  if (navigator.clipboard) {
+    await navigator.clipboard.writeText(url);
+  } else {
+    const input = document.createElement("textarea");
+    input.value = url;
+    input.setAttribute("readonly", "");
+    input.style.position = "fixed";
+    input.style.opacity = "0";
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand("copy");
+    input.remove();
+  }
+
+  const button = document.querySelector(`[data-share-id="${productId}"] span`);
+  if (!button) return;
+
+  const originalText = button.textContent;
+  button.textContent = t("copied");
+  window.setTimeout(() => {
+    button.textContent = originalText;
+  }, 1800);
+}
+
 document.querySelectorAll(".language-button").forEach((button) => {
   button.addEventListener("click", () => setLanguage(button.dataset.lang));
+});
+
+document.getElementById("products").addEventListener("click", (event) => {
+  const shareButton = event.target.closest("[data-share-id]");
+  if (!shareButton) return;
+  shareProduct(shareButton.dataset.shareId).catch(() => {});
 });
 
 renderStaticText();

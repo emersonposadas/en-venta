@@ -102,16 +102,14 @@ main {
 }
 
 .hero {
-  min-height: calc(100vh - 5rem);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.78fr);
-  gap: clamp(1.5rem, 5vw, 4rem);
+  min-height: min(42rem, calc(100vh - 5rem));
+  display: flex;
   align-items: center;
   padding: clamp(2.5rem, 6vw, 5.5rem) 0 2.5rem;
 }
 
 .hero-copy {
-  max-width: 43rem;
+  max-width: 52rem;
 }
 
 .eyebrow {
@@ -183,40 +181,6 @@ h1 {
 .button-secondary {
   border-color: var(--line);
   background: var(--surface);
-}
-
-.hero-board {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.8rem;
-  align-self: stretch;
-  min-height: 28rem;
-}
-
-.hero-tile {
-  display: grid;
-  min-height: 8rem;
-  place-items: center;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--surface);
-  box-shadow: var(--shadow);
-  color: var(--ink);
-  font-size: clamp(1.15rem, 4vw, 2.4rem);
-  font-weight: 950;
-}
-
-.hero-tile-large {
-  grid-row: span 2;
-  background: var(--green);
-  color: white;
-  writing-mode: vertical-rl;
-}
-
-.hero-tile-wide {
-  grid-column: 1 / -1;
-  background: var(--coral);
-  color: white;
 }
 
 .section-heading {
@@ -363,13 +327,20 @@ h1 {
 }
 
 .product-actions {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 0.65rem;
   margin-top: auto;
 }
 
-.product-actions .button {
+.product-actions .button-primary {
   width: 100%;
+}
+
+.share-button {
+  color: var(--green-dark);
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 .sold {
@@ -407,12 +378,7 @@ h1 {
 
 @media (max-width: 920px) {
   .hero {
-    grid-template-columns: 1fr;
     min-height: auto;
-  }
-
-  .hero-board {
-    min-height: 18rem;
   }
 
   .product-grid {
@@ -452,23 +418,6 @@ h1 {
     width: 100%;
   }
 
-  .hero-board {
-    grid-template-columns: 1fr;
-    min-height: auto;
-    gap: 0.55rem;
-  }
-
-  .hero-tile {
-    min-height: 4.6rem;
-  }
-
-  .hero-tile-large,
-  .hero-tile-wide {
-    grid-column: auto;
-    grid-row: auto;
-    writing-mode: horizontal-tb;
-  }
-
   .section-heading {
     display: block;
   }
@@ -476,6 +425,10 @@ h1 {
   .product-grid {
     grid-template-columns: 1fr;
     gap: 0.85rem;
+  }
+
+  .product-actions {
+    grid-template-columns: 1fr;
   }
 
   .media-label span:first-child {
