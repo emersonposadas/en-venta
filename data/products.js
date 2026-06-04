@@ -97,7 +97,7 @@ window.PRODUCTS = [
       ],
     },
     image: {
-      src: "",
+      src: "assets/robot.png",
       accent: "#3678a8",
       label: "8000 Pa",
     },
