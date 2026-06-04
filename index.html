@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cosas personales en venta</title>
+    <meta name="description" content="Venta privada de muebles, hogar y articulos personales. Contacto directo por WhatsApp.">
+    <meta property="og:title" content="Cosas personales en venta">
+    <meta property="og:description" content="Productos personales disponibles. Escribe por WhatsApp para coordinar entrega o recogida.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Cosas en venta">
+        <span class="brand-mark">EV</span>
+        <span data-i18n="brand">En venta</span>
+      </a>
+      <nav class="header-actions" aria-label="Language">
+        <button class="language-button is-active" type="button" data-lang="es">ES</button>
+        <button class="language-button" type="button" data-lang="en">EN</button>
+        <button class="language-button" type="button" data-lang="de">DE</button>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="eyebrow">Entrega o recogida a coordinar</p>
+          <h1 id="hero-title" data-i18n="heroTitle">Cosas personales en venta, listas para coordinar.</h1>
+          <p class="hero-text" data-i18n="heroText">Muebles, hogar y organizacion en buen estado. Pregunta por WhatsApp y coordinamos la mejor forma de entrega.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#products" data-i18n="seeProducts">Ver productos</a>
+            <a class="button button-secondary" id="generalWhatsapp" href="#" target="_blank" rel="noreferrer" data-i18n="askWhatsapp">Preguntar por WhatsApp</a>
+          </div>
+        </div>
+        <div class="hero-board" aria-hidden="true">
+          <div class="hero-tile hero-tile-large">IKEA</div>
+          <div class="hero-tile">20 EUR</div>
+          <div class="hero-tile">169 EUR</div>
+          <div class="hero-tile hero-tile-wide">550 EUR</div>
+        </div>
+      </section>
+
+      <section class="section-heading" aria-labelledby="products-title">
+        <p class="eyebrow" data-i18n="catalogEyebrow">Catalogo actualizado</p>
+        <h2 id="products-title" data-i18n="catalogTitle">Disponibles ahora</h2>
+      </section>
+
+      <section class="product-grid" id="products" aria-live="polite"></section>
+    </main>
+
+    <footer class="site-footer">
+      <p data-i18n="footerNote">Venta privada. Entrega o recogida segun el articulo.</p>
+      <a href="https://github.com/" target="_blank" rel="noreferrer" data-i18n="pagesReady">Listo para GitHub Pages</a>
+    </footer>
+
+    <script src="data/products.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
