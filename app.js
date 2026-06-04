@@ -10,6 +10,7 @@ const translations = {
     catalogTitle: "Disponibles ahora",
     available: "Disponible",
     sold: "Vendido",
+    free: "Gratis",
     reserve: "Me interesa",
     share: "Compartir",
     copied: "Enlace copiado",
@@ -29,6 +30,7 @@ const translations = {
     catalogTitle: "Available now",
     available: "Available",
     sold: "Sold",
+    free: "Free",
     reserve: "I'm interested",
     share: "Share",
     copied: "Link copied",
@@ -48,6 +50,7 @@ const translations = {
     catalogTitle: "Jetzt verfuegbar",
     available: "Verfuegbar",
     sold: "Verkauft",
+    free: "Gratis",
     reserve: "Ich habe Interesse",
     share: "Teilen",
     copied: "Link kopiert",
@@ -88,19 +91,15 @@ function detectLanguage() {
 }
 
 function formatPrice(product) {
+  if (product.price === 0) {
+    return t("free");
+  }
+
   return new Intl.NumberFormat(state.lang, {
     style: "currency",
     currency: product.currency,
     maximumFractionDigits: 0,
   }).format(product.price);
-}
-
-function formatDate(date) {
-  return new Intl.DateTimeFormat(state.lang, {
-    day: "numeric",
-    month: "short",
-    year: "numeric",
-  }).format(new Date(`${date}T12:00:00`));
 }
 
 function t(key) {
@@ -166,7 +165,6 @@ function renderProducts() {
           <div class="product-meta">
           <span class="pill">${t(isSold ? "sold" : "available")}</span>
           <span>${productText(product, "category")}</span>
-          <span>${formatDate(product.date)}</span>
         </div>
         <h3>${title}</h3>
         <p class="summary">${productText(product, "summary")}</p>
