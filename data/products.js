@@ -432,7 +432,7 @@ window.PRODUCTS = [
     nebenanUrl: "",
     price: 0,
     currency: "EUR",
-    sold: false,
+    sold: true,
     category: {
       es: "Cocina y hogar",
       en: "Kitchen and household",
@@ -479,7 +479,7 @@ window.PRODUCTS = [
     nebenanUrl: "",
     price: 10,
     currency: "EUR",
-    sold: false,
+    sold: true,
     category: {
       es: "Cocina y hogar",
       en: "Kitchen and household",
@@ -623,7 +623,7 @@ window.PRODUCTS = [
     nebenanUrl: "",
     price: 6,
     currency: "EUR",
-    sold: false,
+    sold: true,
     category: {
       es: "Cocina y hogar",
       en: "Kitchen and household",
