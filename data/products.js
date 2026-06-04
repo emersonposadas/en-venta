@@ -159,7 +159,7 @@ window.PRODUCTS = [
   {
   id: "balcon-ikea-askholmen-tvetoe-set",
   nebenanUrl: "",
-  price: 249,
+  price: 299,
   currency: "EUR",
   sold: false,
   category: {
@@ -174,9 +174,9 @@ window.PRODUCTS = [
     de: "IKEA Balkon-Set mit Tisch, 4 Stuehlen, Sonnenschirm und RUNNEN Bodenfliesen",
   },
   summary: {
-    es: "Set IKEA para balcon o terraza, con poco uso y en buen estado. Incluye mesa ASKHOLMEN, 4 sillas plegables ASKHOLMEN, parasol TVETOE con base IGGOEN, funda TOSTEROE, 4 cojines KUDDARNA y suelo RUNNEN. Precio negociable.",
-    en: "IKEA balcony or terrace set, lightly used and in good condition. Includes ASKHOLMEN table, 4 ASKHOLMEN folding chairs, TVETOE parasol with IGGOEN base, TOSTEROE cover, 4 KUDDARNA cushions and RUNNEN floor decking. Price negotiable.",
-    de: "IKEA Balkon- oder Terrassen-Set, wenig benutzt und in gutem Zustand. Enthalten sind ASKHOLMEN Tisch, 4 ASKHOLMEN Klappstuehle, TVETOE Sonnenschirm mit IGGOEN Schirmstaender, TOSTEROE Schutzhülle, 4 KUDDARNA Kissen und RUNNEN Bodenfliesen. Preis VB.",
+    es: "Set IKEA para balcon o terraza, con poco uso y en buen estado. Incluye mesa ASKHOLMEN, 4 sillas plegables ASKHOLMEN, parasol TVETOE con base IGGOEN, funda TOSTEROE, 4 cojines KUDDARNA y 5 sets de suelo RUNNEN. Precio negociable.",
+    en: "IKEA balcony or terrace set, lightly used and in good condition. Includes ASKHOLMEN table, 4 ASKHOLMEN folding chairs, TVETOE parasol with IGGOEN base, TOSTEROE cover, 4 KUDDARNA cushions and 5 sets of RUNNEN floor decking. Price negotiable.",
+    de: "IKEA Balkon- oder Terrassen-Set, wenig benutzt und in gutem Zustand. Enthalten sind ASKHOLMEN Tisch, 4 ASKHOLMEN Klappstuehle, TVETOE Sonnenschirm mit IGGOEN Schirmstaender, TOSTEROE Schutzhülle, 4 KUDDARNA Kissen und 5 Sets RUNNEN Bodenfliesen. Preis VB.",
   },
   details: {
     es: [
@@ -186,10 +186,10 @@ window.PRODUCTS = [
       "IGGOEN base para parasol con bolsas de arena",
       "TOSTEROE funda negra para parasol",
       "4 KUDDARNA cojines para silla de exterior, gris claro/beige",
-      "RUNNEN suelo exterior de acacia",
+      "5 sets RUNNEN de suelo exterior de acacia",
       "Todo con poco uso y en buen estado",
-      "Precio nuevo IKEA aprox.: 368 EUR",
-      "Precio: 249 EUR negociable",
+      "Precio nuevo IKEA aprox.: 468 EUR",
+      "Precio: 299 EUR negociable",
       "Entrega o recogida a coordinar. Venta privada, sin garantia ni devolucion",
     ],
     en: [
@@ -199,10 +199,10 @@ window.PRODUCTS = [
       "IGGOEN parasol base with sandbags",
       "TOSTEROE black parasol cover",
       "4 KUDDARNA outdoor chair cushions, light grey-beige",
-      "RUNNEN outdoor acacia floor decking",
+      "5 sets of RUNNEN outdoor acacia floor decking",
       "Everything is lightly used and in good condition",
-      "Original IKEA price approx.: EUR 368",
-      "Price: EUR 249 negotiable",
+      "Original IKEA price approx.: EUR 468",
+      "Price: EUR 299 negotiable",
       "Delivery or pickup to be arranged. Private sale, no warranty or returns",
     ],
     de: [
@@ -212,10 +212,10 @@ window.PRODUCTS = [
       "IGGOEN Schirmstaender mit Sandsaecken",
       "TOSTEROE schwarze Schutzhülle fuer Sonnenschirm",
       "4 KUDDARNA Stuhlkissen fuer draussen, hellgrau-beige",
-      "RUNNEN Bodenfliesen fuer draussen aus Akazie",
+      "5 Sets RUNNEN Bodenfliesen fuer draussen aus Akazie",
       "Alles wenig benutzt und in gutem Zustand",
-      "Neupreis bei IKEA ca.: 368 EUR",
-      "Preis: 249 EUR VB",
+      "Neupreis bei IKEA ca.: 468 EUR",
+      "Preis: 299 EUR VB",
       "Uebergabe oder Abholung abstimmen. Privatverkauf, keine Garantie oder Ruecknahme",
     ],
   },
