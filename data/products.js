@@ -573,7 +573,7 @@ window.PRODUCTS = [
     nebenanUrl: "",
     price: 8,
     currency: "EUR",
-    sold: false,
+    sold: true,
     category: {
       es: "Decoracion",
       en: "Decor",
