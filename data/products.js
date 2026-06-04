@@ -8,7 +8,7 @@ window.PRODUCTS = [
     nebenanUrl: "https://nebenan.de/feed/41096979",
     price: 20,
     currency: "EUR",
-    status: "available",
+    sold: false,
     category: {
       es: "Ropa y accesorios",
       en: "Clothing and accessories",
@@ -56,7 +56,7 @@ window.PRODUCTS = [
     nebenanUrl: "https://nebenan.de/feed/47723268",
     price: 169,
     currency: "EUR",
-    status: "available",
+    sold: false,
     category: {
       es: "Cocina y hogar",
       en: "Kitchen and household",
@@ -107,7 +107,7 @@ window.PRODUCTS = [
     nebenanUrl: "https://nebenan.de/feed/48328430",
     price: 550,
     currency: "EUR",
-    status: "available",
+    sold: false,
     category: {
       es: "Muebles y decoracion",
       en: "Furniture and decor",

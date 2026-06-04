@@ -120,13 +120,17 @@ function renderProducts() {
   grid.innerHTML = "";
 
   window.PRODUCTS.forEach((product) => {
+    const isSold = product.sold === true;
     const title = productText(product, "title");
     const card = document.createElement("article");
-    card.className = `product-card ${product.status === "sold" ? "sold" : ""}`;
+    card.className = `product-card ${isSold ? "sold" : ""}`;
     card.style.setProperty("--accent", product.image.accent);
 
     const details = product.details[state.lang] || product.details.es || [];
     const message = t("productMessage").replace("{title}", title);
+    const primaryButton = isSold
+      ? `<span class="button button-primary is-disabled" aria-disabled="true">${t("sold")}</span>`
+      : `<a class="button button-primary" href="${whatsappUrl(message)}" target="_blank" rel="noreferrer">${whatsappIcon}<span>${t("reserve")}</span></a>`;
 
     card.innerHTML = `
       <div class="product-media">
@@ -136,9 +140,9 @@ function renderProducts() {
           <span class="price">${formatPrice(product)}</span>
         </div>
       </div>
-      <div class="product-body">
-        <div class="product-meta">
-          <span class="pill">${t(product.status)}</span>
+        <div class="product-body">
+          <div class="product-meta">
+          <span class="pill">${t(isSold ? "sold" : "available")}</span>
           <span>${productText(product, "category")}</span>
           <span>${formatDate(product.date)}</span>
         </div>
@@ -148,7 +152,7 @@ function renderProducts() {
           ${details.map((item) => `<li>${item}</li>`).join("")}
         </ul>
         <div class="product-actions">
-          <a class="button button-primary" href="${whatsappUrl(message)}" target="_blank" rel="noreferrer">${whatsappIcon}<span>${t("reserve")}</span></a>
+          ${primaryButton}
           <a class="button button-secondary nebenan-link" href="${product.nebenanUrl}" target="_blank" rel="noreferrer">${t("originalPost")}</a>
         </div>
       </div>

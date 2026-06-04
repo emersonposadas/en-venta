@@ -376,6 +376,10 @@ h1 {
   background: #777;
 }
 
+.button.is-disabled {
+  cursor: not-allowed;
+}
+
 .site-footer {
   display: flex;
   flex-wrap: wrap;
