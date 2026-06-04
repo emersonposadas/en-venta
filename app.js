@@ -11,7 +11,6 @@ const translations = {
     available: "Disponible",
     sold: "Vendido",
     reserve: "Me interesa",
-    originalPost: "Ver anuncio",
     footerNote: "Venta privada. Entrega o recogida segun el articulo.",
     pagesReady: "Listo para GitHub Pages",
     generalMessage: "Hola, vi tu pagina de cosas en venta y quiero hacer una consulta.",
@@ -29,7 +28,6 @@ const translations = {
     available: "Available",
     sold: "Sold",
     reserve: "I'm interested",
-    originalPost: "View listing",
     footerNote: "Private sale. Delivery or pickup depends on the item.",
     pagesReady: "Ready for GitHub Pages",
     generalMessage: "Hi, I saw your sale page and would like to ask a question.",
@@ -47,7 +45,6 @@ const translations = {
     available: "Verfuegbar",
     sold: "Verkauft",
     reserve: "Ich habe Interesse",
-    originalPost: "Anzeige ansehen",
     footerNote: "Privatverkauf. Uebergabe oder Abholung je nach Artikel.",
     pagesReady: "Bereit fuer GitHub Pages",
     generalMessage: "Hallo, ich habe deine Verkaufsseite gesehen und moechte etwas fragen.",
@@ -153,7 +150,6 @@ function renderProducts() {
         </ul>
         <div class="product-actions">
           ${primaryButton}
-          <a class="button button-secondary nebenan-link" href="${product.nebenanUrl}" target="_blank" rel="noreferrer">${t("originalPost")}</a>
         </div>
       </div>
     `;
