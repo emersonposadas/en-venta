@@ -64,8 +64,13 @@ const whatsappIcon = `
 `;
 
 function detectLanguage() {
-  const browserLang = navigator.language.slice(0, 2).toLowerCase();
-  return ["es", "en", "de"].includes(browserLang) ? browserLang : "es";
+  const supportedLanguages = ["es", "en", "de"];
+  const browserLanguages = navigator.languages?.length ? navigator.languages : [navigator.language];
+  const matchedLanguage = browserLanguages
+    .map((language) => language.slice(0, 2).toLowerCase())
+    .find((language) => supportedLanguages.includes(language));
+
+  return matchedLanguage || "es";
 }
 
 function formatPrice(product) {

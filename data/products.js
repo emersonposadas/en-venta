@@ -120,9 +120,9 @@ window.PRODUCTS = [
       de: "Gartenmoebel-Set IKEA komplett",
     },
     summary: {
-      es: "Set completo IKEA para jardin o balcon, poco usado y en buen estado. Preferiblemente venta completa.",
-      en: "Complete IKEA garden or balcony set, lightly used and in good condition. Preferably sold as a full set.",
-      de: "Komplettes Garten-/Balkon-Set von IKEA, wenig benutzt und in gutem Zustand. Verkauf bevorzugt komplett.",
+      es: "Set completo IKEA para jardin o balcon, poco usado y en buen estado. Preferiblemente venta completa, pero se pueden vender piezas individualmente.",
+      en: "Complete IKEA garden or balcony set, lightly used and in good condition. Preferably sold as a full set, but individual pieces can be sold separately.",
+      de: "Komplettes Garten-/Balkon-Set von IKEA, wenig benutzt und in gutem Zustand. Verkauf bevorzugt komplett, einzelne Teile koennen aber separat verkauft werden.",
     },
     details: {
       es: [
@@ -131,6 +131,7 @@ window.PRODUCTS = [
         "Cojines KUDDARNA y FRÖSÖN/DUVHOLMEN",
         "Funda TOSTERÖ, baldosas RUNNEN y molduras",
         "Guirnalda SOLVINDEN, alfombra LOHALS, taburete ALSEDA y farol ERGGRAN",
+        "Venta completa preferida, pero algunas piezas pueden venderse individualmente",
         "Entrega o recogida a coordinar. Venta privada, sin garantia ni devolucion",
       ],
       en: [
@@ -139,6 +140,7 @@ window.PRODUCTS = [
         "KUDDARNA and FRÖSÖN/DUVHOLMEN cushions",
         "TOSTERÖ cover, RUNNEN floor decking and trims",
         "SOLVINDEN light chain, LOHALS rug, ALSEDA stool and ERGGRAN lantern",
+        "Full set preferred, but some pieces can be sold individually",
         "Delivery or pickup to be arranged. Private sale, no warranty or returns",
       ],
       de: [
@@ -147,6 +149,7 @@ window.PRODUCTS = [
         "KUDDARNA und FRÖSÖN/DUVHOLMEN Kissen",
         "TOSTERÖ Abdeckung, RUNNEN Bodenfliesen sowie Rand- und Eckleisten",
         "SOLVINDEN Lichterkette, LOHALS Teppich, ALSEDA Hocker und ERGGRAN Laterne",
+        "Komplettverkauf bevorzugt, einzelne Teile koennen aber separat verkauft werden",
         "Uebergabe oder Abholung abstimmen. Privatverkauf, keine Garantie oder Ruecknahme",
       ],
     },
@@ -174,9 +177,9 @@ window.PRODUCTS = [
     de: "IKEA Balkon-Set mit Tisch, 4 Stuehlen, Sonnenschirm und RUNNEN Bodenfliesen",
   },
   summary: {
-    es: "Set IKEA para balcon o terraza, con poco uso y en buen estado. Incluye mesa ASKHOLMEN, 4 sillas plegables ASKHOLMEN, parasol TVETOE con base IGGOEN, funda TOSTEROE, 4 cojines KUDDARNA y 5 sets de suelo RUNNEN. Precio negociable.",
-    en: "IKEA balcony or terrace set, lightly used and in good condition. Includes ASKHOLMEN table, 4 ASKHOLMEN folding chairs, TVETOE parasol with IGGOEN base, TOSTEROE cover, 4 KUDDARNA cushions and 5 sets of RUNNEN floor decking. Price negotiable.",
-    de: "IKEA Balkon- oder Terrassen-Set, wenig benutzt und in gutem Zustand. Enthalten sind ASKHOLMEN Tisch, 4 ASKHOLMEN Klappstuehle, TVETOE Sonnenschirm mit IGGOEN Schirmstaender, TOSTEROE Schutzhülle, 4 KUDDARNA Kissen und 5 Sets RUNNEN Bodenfliesen. Preis VB.",
+    es: "Set IKEA para balcon o terraza, con poco uso y en buen estado. Incluye mesa ASKHOLMEN, 4 sillas plegables ASKHOLMEN, parasol TVETOE con base IGGOEN, funda TOSTEROE, 4 cojines KUDDARNA y 5 sets de suelo RUNNEN. Precio negociable; tambien se pueden vender piezas individualmente.",
+    en: "IKEA balcony or terrace set, lightly used and in good condition. Includes ASKHOLMEN table, 4 ASKHOLMEN folding chairs, TVETOE parasol with IGGOEN base, TOSTEROE cover, 4 KUDDARNA cushions and 5 sets of RUNNEN floor decking. Price negotiable; individual pieces can also be sold separately.",
+    de: "IKEA Balkon- oder Terrassen-Set, wenig benutzt und in gutem Zustand. Enthalten sind ASKHOLMEN Tisch, 4 ASKHOLMEN Klappstuehle, TVETOE Sonnenschirm mit IGGOEN Schirmstaender, TOSTEROE Schutzhülle, 4 KUDDARNA Kissen und 5 Sets RUNNEN Bodenfliesen. Preis VB; einzelne Teile koennen auch separat verkauft werden.",
   },
   details: {
     es: [
@@ -190,6 +193,7 @@ window.PRODUCTS = [
       "Todo con poco uso y en buen estado",
       "Precio nuevo IKEA aprox.: 468 EUR",
       "Precio: 299 EUR negociable",
+      "Venta completa preferida, pero se pueden vender piezas individualmente",
       "Entrega o recogida a coordinar. Venta privada, sin garantia ni devolucion",
     ],
     en: [
@@ -203,6 +207,7 @@ window.PRODUCTS = [
       "Everything is lightly used and in good condition",
       "Original IKEA price approx.: EUR 468",
       "Price: EUR 299 negotiable",
+      "Full set preferred, but pieces can be sold individually",
       "Delivery or pickup to be arranged. Private sale, no warranty or returns",
     ],
     de: [
@@ -216,6 +221,7 @@ window.PRODUCTS = [
       "Alles wenig benutzt und in gutem Zustand",
       "Neupreis bei IKEA ca.: 468 EUR",
       "Preis: 299 EUR VB",
+      "Komplettverkauf bevorzugt, einzelne Teile koennen aber separat verkauft werden",
       "Uebergabe oder Abholung abstimmen. Privatverkauf, keine Garantie oder Ruecknahme",
     ],
   },
