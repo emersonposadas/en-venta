@@ -50,16 +50,6 @@ window.PRODUCT_STATUS = [
     sold: false,
   },
   {
-    id: "ikea-balkon-askholmen-table",
-    name: "Mesa IKEA ASKHOLMEN de exterior",
-    sold: false,
-  },
-  {
-    id: "ikea-balkon-tvetoe-iggoen",
-    name: "Parasol IKEA TVETÖ con base IGGÖN",
-    sold: false,
-  },
-  {
     id: "lotusgrill-orange",
     name: "Parrilla LotusGrill naranja",
     sold: false,
