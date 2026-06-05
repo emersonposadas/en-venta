@@ -469,9 +469,9 @@ window.PRODUCTS = [
       ],
     },
     image: {
-      src: "assets/ikea-balkon-set.jpg",
+      src: "assets/ikea-balkon-extra-photo.jpg",
       accent: "#765537",
-      label: "IKEA Balkon",
+      label: "Foto real",
     },
   },
   {
@@ -521,9 +521,9 @@ window.PRODUCTS = [
       ],
     },
     image: {
-      src: "assets/ikea-balkon-askholmen-chair.jpg",
+      src: "assets/ikea-balkon-extra-photo.jpg",
       accent: "#7b5a39",
-      label: "ASKHOLMEN",
+      label: "Foto real",
     },
   },
   {
