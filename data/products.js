@@ -8,7 +8,6 @@ window.PRODUCTS = [
     nebenanUrl: "https://nebenan.de/feed/41096979",
     price: 20,
     currency: "EUR",
-    sold: false,
     category: {
       es: "Ropa y accesorios",
       en: "Clothing and accessories",
@@ -55,7 +54,6 @@ window.PRODUCTS = [
     nebenanUrl: "https://nebenan.de/feed/47723268",
     price: 169,
     currency: "EUR",
-    sold: false,
     category: {
       es: "Cocina y hogar",
       en: "Kitchen and household",
@@ -105,7 +103,6 @@ window.PRODUCTS = [
     nebenanUrl: "https://nebenan.de/feed/48328430",
     price: 550,
     currency: "EUR",
-    sold: false,
     category: {
       es: "Muebles y decoracion",
       en: "Furniture and decor",
@@ -161,7 +158,6 @@ window.PRODUCTS = [
     nebenanUrl: "",
     price: 299,
     currency: "EUR",
-    sold: false,
     category: {
       es: "Muebles y decoracion",
       en: "Furniture and decor",
@@ -232,7 +228,6 @@ window.PRODUCTS = [
     nebenanUrl: "",
     price: 55,
     currency: "EUR",
-    sold: false,
     category: {
       es: "Hogar y jardín",
       en: "Home and garden",
@@ -282,7 +277,6 @@ window.PRODUCTS = [
     nebenanUrl: "",
     price: 15,
     currency: "EUR",
-    sold: false,
     category: {
       es: "Hogar y cocina",
       en: "Home and kitchen",
@@ -332,7 +326,6 @@ window.PRODUCTS = [
     nebenanUrl: "",
     price: 5,
     currency: "EUR",
-    sold: false,
     category: {
       es: "Muebles",
       en: "Furniture",
@@ -382,7 +375,6 @@ window.PRODUCTS = [
     nebenanUrl: "",
     price: 12,
     currency: "EUR",
-    sold: true,
     category: {
       es: "Cocina y hogar",
       en: "Kitchen and household",
@@ -432,7 +424,6 @@ window.PRODUCTS = [
     nebenanUrl: "",
     price: 0,
     currency: "EUR",
-    sold: true,
     category: {
       es: "Cocina y hogar",
       en: "Kitchen and household",
@@ -479,7 +470,6 @@ window.PRODUCTS = [
     nebenanUrl: "",
     price: 10,
     currency: "EUR",
-    sold: true,
     category: {
       es: "Cocina y hogar",
       en: "Kitchen and household",
@@ -526,7 +516,6 @@ window.PRODUCTS = [
     nebenanUrl: "",
     price: 5,
     currency: "EUR",
-    sold: false,
     category: {
       es: "Hogar y jardin",
       en: "Home and garden",
@@ -573,7 +562,6 @@ window.PRODUCTS = [
     nebenanUrl: "",
     price: 8,
     currency: "EUR",
-    sold: true,
     category: {
       es: "Decoracion",
       en: "Decor",
@@ -623,7 +611,6 @@ window.PRODUCTS = [
     nebenanUrl: "",
     price: 6,
     currency: "EUR",
-    sold: true,
     category: {
       es: "Cocina y hogar",
       en: "Kitchen and household",
@@ -670,7 +657,6 @@ window.PRODUCTS = [
     nebenanUrl: "",
     price: 5,
     currency: "EUR",
-    sold: false,
     category: {
       es: "Cocina y hogar",
       en: "Kitchen and household",
@@ -717,7 +703,6 @@ window.PRODUCTS = [
     nebenanUrl: "",
     price: 10,
     currency: "EUR",
-    sold: false,
     category: {
       es: "Hogar y cocina",
       en: "Home and kitchen",
@@ -764,7 +749,6 @@ window.PRODUCTS = [
     nebenanUrl: "",
     price: 10,
     currency: "EUR",
-    sold: false,
     category: {
       es: "Hogar y cocina",
       en: "Home and kitchen",
@@ -811,7 +795,6 @@ window.PRODUCTS = [
     nebenanUrl: "",
     price: 10,
     currency: "EUR",
-    sold: false,
     category: {
       es: "Hogar y cocina",
       en: "Home and kitchen",
@@ -858,7 +841,6 @@ window.PRODUCTS = [
     nebenanUrl: "",
     price: 3,
     currency: "EUR",
-    sold: true,
     category: {
       es: "Cocina y hogar",
       en: "Kitchen and household",
@@ -905,7 +887,6 @@ window.PRODUCTS = [
     nebenanUrl: "",
     price: 25,
     currency: "EUR",
-    sold: false,
     category: {
       es: "Hogar y jardin",
       en: "Home and garden",
@@ -952,7 +933,6 @@ window.PRODUCTS = [
     nebenanUrl: "",
     price: 15,
     currency: "EUR",
-    sold: false,
     category: {
       es: "Decoracion",
       en: "Decor",
@@ -999,7 +979,6 @@ window.PRODUCTS = [
     nebenanUrl: "",
     price: 15,
     currency: "EUR",
-    sold: false,
     category: {
       es: "Cuidado personal",
       en: "Personal care",
@@ -1049,7 +1028,6 @@ window.PRODUCTS = [
     nebenanUrl: "",
     price: 25,
     currency: "EUR",
-    sold: false,
     category: {
       es: "Camping",
       en: "Camping",
@@ -1094,4 +1072,11 @@ window.PRODUCTS = [
       label: "Quechua",
     },
   },
-];
+].map((product) => {
+  const status = (window.PRODUCT_STATUS || []).find((item) => item.id === product.id);
+
+  return {
+    ...product,
+    sold: status ? status.sold === true : false,
+  };
+});

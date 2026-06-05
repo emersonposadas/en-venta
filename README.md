@@ -4,10 +4,10 @@ Sitio estatico para vender cosas personales, listo para GitHub Pages.
 
 ## Editar productos
 
-Los productos viven en `data/products.js`.
+Los productos completos viven en `data/products.js`. El estado de vendido vive en `data/product-status.js`.
 
 - Cambia `whatsappPhone` por tu numero con prefijo internacional, sin `+`.
-- Para marcar algo vendido, cambia `sold: false` por `sold: true`. El producto seguira visible y el boton quedara desactivado.
+- Para marcar algo vendido, abre `data/product-status.js` y cambia `sold: false` por `sold: true`. El producto seguira visible y el boton quedara desactivado.
 - Para agregar fotos, guarda imagenes en `assets/` y pon la ruta en `image.src`, por ejemplo `assets/vuku.jpg`, `assets/robot.jpg` o `assets/garten-set.jpg`.
 - Puedes ajustar por producto si es recogida, entrega o ambas opciones en los textos de `details`.
 
