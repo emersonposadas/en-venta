@@ -16,7 +16,7 @@ window.PRODUCT_STATUS = [
   },
   {
     id: "ikea-set-solvinden-lights",
-    name: "Guirnalda IKEA SOLVINDEN naranja",
+    name: "Lampara de mesa LED solar IKEA SOLVINDEN",
     sold: false,
   },
   {
