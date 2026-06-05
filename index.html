@@ -30,15 +30,26 @@
           <h1 id="hero-title" data-i18n="heroTitle">Cosas personales en venta, listas para coordinar.</h1>
           <p class="hero-text" data-i18n="heroText">Muebles, hogar y organizacion en buen estado. Pregunta por WhatsApp y coordinamos la mejor forma de entrega.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#products" data-i18n="seeProducts">Ver productos</a>
+            <a class="button button-primary" href="#catalog" data-i18n="seeProducts">Ver productos</a>
             <a class="button button-secondary" id="generalWhatsapp" href="#" target="_blank" rel="noreferrer" data-i18n="askWhatsapp">Preguntar por WhatsApp</a>
           </div>
         </div>
       </section>
 
-      <section class="section-heading" aria-labelledby="products-title">
+      <section class="section-heading" id="catalog" aria-labelledby="products-title">
         <p class="eyebrow" data-i18n="catalogEyebrow">Catalogo actualizado</p>
         <h2 id="products-title" data-i18n="catalogTitle">Disponibles ahora</h2>
+      </section>
+
+      <section class="catalog-filters" aria-label="Filtros de productos">
+        <label class="filter-field">
+          <span data-i18n="statusFilter">Estado</span>
+          <select id="statusFilter"></select>
+        </label>
+        <label class="filter-field">
+          <span data-i18n="categoryFilter">Categoria</span>
+          <select id="categoryFilter"></select>
+        </label>
       </section>
 
       <section class="product-grid" id="products" aria-live="polite"></section>

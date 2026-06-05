@@ -10,6 +10,11 @@ const translations = {
     catalogTitle: "Disponibles ahora",
     available: "Disponible",
     sold: "Vendido",
+    statusFilter: "Estado",
+    categoryFilter: "Categoria",
+    allStatuses: "Todos",
+    allCategories: "Todas",
+    noProducts: "No hay productos con estos filtros.",
     free: "Gratis",
     reserve: "Me interesa",
     share: "Compartir",
@@ -30,6 +35,11 @@ const translations = {
     catalogTitle: "Available now",
     available: "Available",
     sold: "Sold",
+    statusFilter: "Status",
+    categoryFilter: "Category",
+    allStatuses: "All",
+    allCategories: "All",
+    noProducts: "No products match these filters.",
     free: "Free",
     reserve: "I'm interested",
     share: "Share",
@@ -50,6 +60,11 @@ const translations = {
     catalogTitle: "Jetzt verfuegbar",
     available: "Verfuegbar",
     sold: "Verkauft",
+    statusFilter: "Status",
+    categoryFilter: "Kategorie",
+    allStatuses: "Alle",
+    allCategories: "Alle",
+    noProducts: "Keine Produkte passen zu diesen Filtern.",
     free: "Gratis",
     reserve: "Ich habe Interesse",
     share: "Teilen",
@@ -63,6 +78,8 @@ const translations = {
 
 const state = {
   lang: localStorage.getItem("saleLanguage") || detectLanguage(),
+  statusFilter: "all",
+  categoryFilter: "all",
 };
 
 const whatsappIcon = `
@@ -110,6 +127,13 @@ function productText(product, field) {
   return product[field][state.lang] || product[field].es || product[field].de || "";
 }
 
+function normalizeText(value) {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
+
 function whatsappUrl(message) {
   const phone = window.STORE_CONFIG.whatsappPhone.replace(/\D/g, "");
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
@@ -135,11 +159,70 @@ function renderStaticText() {
   });
 }
 
+function categoryKey(product) {
+  return normalizeText(product.category.es);
+}
+
+function getFilterCategories() {
+  const categories = new Map();
+  window.PRODUCTS.forEach((product) => {
+    if (!categories.has(categoryKey(product))) {
+      categories.set(categoryKey(product), product);
+    }
+  });
+
+  return [...categories.entries()].sort(([, firstProduct], [, secondProduct]) =>
+    productText(firstProduct, "category").localeCompare(productText(secondProduct, "category"), state.lang)
+  );
+}
+
+function renderFilters() {
+  const statusFilter = document.getElementById("statusFilter");
+  const categoryFilter = document.getElementById("categoryFilter");
+
+  statusFilter.innerHTML = `
+    <option value="all">${t("allStatuses")}</option>
+    <option value="available">${t("available")}</option>
+    <option value="sold">${t("sold")}</option>
+  `;
+  statusFilter.value = state.statusFilter;
+
+  categoryFilter.innerHTML = `
+    <option value="all">${t("allCategories")}</option>
+    ${getFilterCategories()
+      .map(([category, product]) => {
+        return `<option value="${category}">${productText(product, "category")}</option>`;
+      })
+      .join("")}
+  `;
+  categoryFilter.value = state.categoryFilter;
+}
+
+function productMatchesFilters(product) {
+  const matchesStatus =
+    state.statusFilter === "all" ||
+    (state.statusFilter === "available" && product.sold !== true) ||
+    (state.statusFilter === "sold" && product.sold === true);
+  const matchesCategory = state.categoryFilter === "all" || categoryKey(product) === state.categoryFilter;
+
+  return matchesStatus && matchesCategory;
+}
+
 function renderProducts() {
   const grid = document.getElementById("products");
   grid.innerHTML = "";
 
-  window.PRODUCTS.forEach((product) => {
+  const filteredProducts = window.PRODUCTS.filter(productMatchesFilters);
+
+  if (!filteredProducts.length) {
+    const emptyState = document.createElement("p");
+    emptyState.className = "empty-state";
+    emptyState.textContent = t("noProducts");
+    grid.appendChild(emptyState);
+    return;
+  }
+
+  filteredProducts.forEach((product) => {
     const isSold = product.sold === true;
     const title = productText(product, "title");
     const card = document.createElement("article");
@@ -188,6 +271,7 @@ function setLanguage(lang) {
   state.lang = lang;
   localStorage.setItem("saleLanguage", lang);
   renderStaticText();
+  renderFilters();
   renderProducts();
 }
 
@@ -232,6 +316,16 @@ document.querySelectorAll(".language-button").forEach((button) => {
   button.addEventListener("click", () => setLanguage(button.dataset.lang));
 });
 
+document.getElementById("statusFilter").addEventListener("change", (event) => {
+  state.statusFilter = event.target.value;
+  renderProducts();
+});
+
+document.getElementById("categoryFilter").addEventListener("change", (event) => {
+  state.categoryFilter = event.target.value;
+  renderProducts();
+});
+
 document.getElementById("products").addEventListener("click", (event) => {
   const shareButton = event.target.closest("[data-share-id]");
   if (!shareButton) return;
@@ -239,4 +333,5 @@ document.getElementById("products").addEventListener("click", (event) => {
 });
 
 renderStaticText();
+renderFilters();
 renderProducts();

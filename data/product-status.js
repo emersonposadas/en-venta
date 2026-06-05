@@ -11,12 +11,52 @@ window.PRODUCT_STATUS = [
   },
   {
     id: "gartenmoebel-ikea-set",
-    name: "Set completo de jardin/balcon IKEA",
+    name: "Set completo de muebles IKEA NÄMMARÖ para exterior",
+    sold: false,
+  },
+  {
+    id: "ikea-set-solvinden-lights",
+    name: "Guirnalda IKEA SOLVINDEN naranja",
+    sold: false,
+  },
+  {
+    id: "ikea-set-alseda-stool",
+    name: "Taburete IKEA ALSEDA de fibra natural",
+    sold: false,
+  },
+  {
+    id: "ikea-set-lohals-rug",
+    name: "Alfombra IKEA LOHALS de yute",
+    sold: false,
+  },
+  {
+    id: "ikea-set-solar-lantern",
+    name: "Farol solar IKEA blanco",
+    sold: false,
+  },
+  {
+    id: "ikea-set-erggran-lantern",
+    name: "Farol IKEA ERGGRAN de cristal",
     sold: false,
   },
   {
     id: "balcon-ikea-askholmen-tvetoe-set",
     name: "Set IKEA para balcon con mesa, 4 sillas, parasol y suelo RUNNEN",
+    sold: false,
+  },
+  {
+    id: "ikea-balkon-askholmen-chair",
+    name: "Silla IKEA ASKHOLMEN individual con cojin",
+    sold: false,
+  },
+  {
+    id: "ikea-balkon-askholmen-table",
+    name: "Mesa IKEA ASKHOLMEN de exterior",
+    sold: false,
+  },
+  {
+    id: "ikea-balkon-tvetoe-iggoen",
+    name: "Parasol IKEA TVETÖ con base IGGÖN",
     sold: false,
   },
   {
