@@ -27,7 +27,7 @@ window.PRODUCT_STATUS = [
   {
     id: "ikea-set-lohals-rug",
     name: "Alfombra IKEA LOHALS de yute",
-    sold: false,
+    sold: true,
   },
   {
     id: "ikea-set-solar-lantern",
@@ -57,7 +57,7 @@ window.PRODUCT_STATUS = [
   {
     id: "set-copas-cristal",
     name: "Set de copas de cristal variadas",
-    sold: false,
+    sold: true,
   },
   {
     id: "ikea-hutten-weinregal",
@@ -122,7 +122,7 @@ window.PRODUCT_STATUS = [
   {
     id: "mexican-hammock",
     name: "Hamaca mexicana",
-    sold: false,
+    sold: true,
   },
   {
     id: "ikea-decorative-picture",
