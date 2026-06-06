@@ -10,11 +10,6 @@ window.PRODUCT_STATUS = [
     sold: false,
   },
   {
-    id: "gartenmoebel-ikea-set",
-    name: "Set completo de muebles IKEA NÄMMARÖ para exterior",
-    sold: false,
-  },
-  {
     id: "ikea-set-solvinden-lights",
     name: "Lampara de mesa LED solar IKEA SOLVINDEN",
     sold: false,
@@ -40,14 +35,28 @@ window.PRODUCT_STATUS = [
     sold: false,
   },
   {
-    id: "balcon-ikea-askholmen-tvetoe-set",
-    name: "Set IKEA para balcon con mesa, 4 sillas, parasol y suelo RUNNEN",
-    sold: false,
-  },
-  {
     id: "ikea-balkon-askholmen-chair",
     name: "Silla IKEA ASKHOLMEN individual con cojin",
     sold: false,
+    totalQuantity: 4,
+    availableQuantity: 4,
+  },
+  {
+    id: "ikea-askholmen-klapptisch",
+    name: "Mesa plegable exterior IKEA ASKHOLMEN",
+    sold: false,
+  },
+  {
+    id: "ikea-torparo-balcony-table",
+    name: "Mesa de balcon IKEA TORPARÖ blanca",
+    sold: false,
+  },
+  {
+    id: "windhager-flexi-fit-mosquitero",
+    name: "Mosquitero Windhager Flexi Fit nuevo",
+    sold: false,
+    totalQuantity: 2,
+    availableQuantity: 2,
   },
   {
     id: "lotusgrill-orange",

@@ -10,6 +10,7 @@ const translations = {
     catalogTitle: "Disponibles ahora",
     available: "Disponible",
     sold: "Vendido",
+    availableCount: "{count} disponibles",
     statusFilter: "Estado",
     categoryFilter: "Categoria",
     allStatuses: "Todos",
@@ -35,6 +36,7 @@ const translations = {
     catalogTitle: "Available now",
     available: "Available",
     sold: "Sold",
+    availableCount: "{count} available",
     statusFilter: "Status",
     categoryFilter: "Category",
     allStatuses: "All",
@@ -60,6 +62,7 @@ const translations = {
     catalogTitle: "Jetzt verfuegbar",
     available: "Verfuegbar",
     sold: "Verkauft",
+    availableCount: "{count} verfuegbar",
     statusFilter: "Status",
     categoryFilter: "Kategorie",
     allStatuses: "Alle",
@@ -115,7 +118,8 @@ function formatPrice(product) {
   return new Intl.NumberFormat(state.lang, {
     style: "currency",
     currency: product.currency,
-    maximumFractionDigits: 0,
+    minimumFractionDigits: Number.isInteger(product.price) ? 0 : 2,
+    maximumFractionDigits: Number.isInteger(product.price) ? 0 : 2,
   }).format(product.price);
 }
 
@@ -199,13 +203,26 @@ function renderFilters() {
 }
 
 function productMatchesFilters(product) {
+  const isSold = isProductSold(product);
   const matchesStatus =
     state.statusFilter === "all" ||
-    (state.statusFilter === "available" && product.sold !== true) ||
-    (state.statusFilter === "sold" && product.sold === true);
+    (state.statusFilter === "available" && !isSold) ||
+    (state.statusFilter === "sold" && isSold);
   const matchesCategory = state.categoryFilter === "all" || categoryKey(product) === state.categoryFilter;
 
   return matchesStatus && matchesCategory;
+}
+
+function isProductSold(product) {
+  return product.sold === true || product.availableQuantity === 0;
+}
+
+function inventoryLabel(product) {
+  if (!Number.isFinite(product.availableQuantity) || product.availableQuantity <= 0) {
+    return "";
+  }
+
+  return t("availableCount").replace("{count}", product.availableQuantity);
 }
 
 function renderProducts() {
@@ -223,8 +240,9 @@ function renderProducts() {
   }
 
   filteredProducts.forEach((product) => {
-    const isSold = product.sold === true;
+    const isSold = isProductSold(product);
     const title = productText(product, "title");
+    const availability = inventoryLabel(product);
     const card = document.createElement("article");
     card.id = product.id;
     card.className = `product-card ${isSold ? "sold" : ""}`;
@@ -247,6 +265,7 @@ function renderProducts() {
         <div class="product-body">
           <div class="product-meta">
           <span class="pill">${t(isSold ? "sold" : "available")}</span>
+          ${availability ? `<span class="pill">${availability}</span>` : ""}
           <span>${productText(product, "category")}</span>
         </div>
         <h3>${title}</h3>
