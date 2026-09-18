@@ -4,6 +4,118 @@ window.STORE_CONFIG = {
 
 window.PRODUCTS = [
   {
+    "id": "ikea-armario-espejo-1",
+    "nebenanUrl": "",
+    "price": 450,
+    "currency": "EUR",
+    "category": {
+      "es": "Muebles",
+      "en": "Furniture",
+      "de": "Moebel"
+    },
+    "title": {
+      "es": "Closet IKEA 1 con puertas de espejo",
+      "en": "IKEA wardrobe 1 with mirrored doors",
+      "de": "IKEA Kleiderschrank 1 mit Spiegeltueren"
+    },
+    "summary": {
+      "es": "Closet IKEA blanco con puertas de espejo y equipamiento interior incluido, tal como se muestra. Costó aproximadamente 900 EUR; se vende por 450 EUR para que se vaya pronto.",
+      "en": "White IKEA wardrobe with mirrored doors and interior fittings included, as shown. Originally cost approximately EUR 900; offered for EUR 450 for a quick sale.",
+      "de": "Weisser IKEA Kleiderschrank mit Spiegeltueren und Innenausstattung wie abgebildet. Urspruenglicher Kaufpreis ca. 900 EUR; fuer einen schnellen Verkauf jetzt 450 EUR."
+    },
+    "details": {
+      "es": [
+        "Incluye puertas de espejo, estantes, cajones y barra para colgar ropa",
+        "Se vende con la configuración interior de las fotos; ropa y objetos personales no incluidos",
+        "Precio original aproximado de este closet: 900 EUR",
+        "Precio de venta de este closet: 450 EUR",
+        "Venta individual: el otro closet se vende por separado",
+        "Recogida a coordinar por WhatsApp"
+      ],
+      "en": [
+        "Includes mirrored doors, shelves, drawers and a clothes rail",
+        "Sold with the interior configuration shown; clothing and personal belongings not included",
+        "Approximate original cost of this wardrobe: EUR 900",
+        "Sale price for this wardrobe: EUR 450",
+        "Sold individually: the other wardrobe is listed separately",
+        "Pickup to be arranged on WhatsApp"
+      ],
+      "de": [
+        "Mit Spiegeltueren, Einlegeboeden, Schubladen und Kleiderstange",
+        "Mit der abgebildeten Innenausstattung; Kleidung und persoenliche Gegenstaende nicht enthalten",
+        "Urspruenglicher Kaufpreis dieses Schranks: ca. 900 EUR",
+        "Verkaufspreis fuer diesen Schrank: 450 EUR",
+        "Einzelverkauf: Der andere Schrank wird separat angeboten",
+        "Abholung per WhatsApp abstimmen"
+      ]
+    },
+    "image": {
+      "src": "assets/20260918_100549.jpg",
+      "accent": "#8f958b",
+      "label": "IKEA 1"
+    },
+    "images": [
+      "assets/20260918_100549.jpg",
+      "assets/20260918_100610.jpg"
+    ]
+  },
+  {
+    "id": "ikea-armario-espejo-2",
+    "nebenanUrl": "",
+    "price": 450,
+    "currency": "EUR",
+    "category": {
+      "es": "Muebles",
+      "en": "Furniture",
+      "de": "Moebel"
+    },
+    "title": {
+      "es": "Closet IKEA 2 con puertas de espejo",
+      "en": "IKEA wardrobe 2 with mirrored doors",
+      "de": "IKEA Kleiderschrank 2 mit Spiegeltueren"
+    },
+    "summary": {
+      "es": "Closet IKEA blanco con puertas de espejo y equipamiento interior incluido, tal como se muestra. Costó aproximadamente 900 EUR; se vende por 450 EUR para que se vaya pronto.",
+      "en": "White IKEA wardrobe with mirrored doors and interior fittings included, as shown. Originally cost approximately EUR 900; offered for EUR 450 for a quick sale.",
+      "de": "Weisser IKEA Kleiderschrank mit Spiegeltueren und Innenausstattung wie abgebildet. Urspruenglicher Kaufpreis ca. 900 EUR; fuer einen schnellen Verkauf jetzt 450 EUR."
+    },
+    "details": {
+      "es": [
+        "Incluye puertas de espejo, estantes, cajones y barra para colgar ropa",
+        "Se vende con la configuración interior de las fotos; ropa y objetos personales no incluidos",
+        "Precio original aproximado de este closet: 900 EUR",
+        "Precio de venta de este closet: 450 EUR",
+        "Venta individual: el otro closet se vende por separado",
+        "Recogida a coordinar por WhatsApp"
+      ],
+      "en": [
+        "Includes mirrored doors, shelves, drawers and a clothes rail",
+        "Sold with the interior configuration shown; clothing and personal belongings not included",
+        "Approximate original cost of this wardrobe: EUR 900",
+        "Sale price for this wardrobe: EUR 450",
+        "Sold individually: the other wardrobe is listed separately",
+        "Pickup to be arranged on WhatsApp"
+      ],
+      "de": [
+        "Mit Spiegeltueren, Einlegeboeden, Schubladen und Kleiderstange",
+        "Mit der abgebildeten Innenausstattung; Kleidung und persoenliche Gegenstaende nicht enthalten",
+        "Urspruenglicher Kaufpreis dieses Schranks: ca. 900 EUR",
+        "Verkaufspreis fuer diesen Schrank: 450 EUR",
+        "Einzelverkauf: Der andere Schrank wird separat angeboten",
+        "Abholung per WhatsApp abstimmen"
+      ]
+    },
+    "image": {
+      "src": "assets/20260918_100627.jpg",
+      "accent": "#8f958b",
+      "label": "IKEA 2"
+    },
+    "images": [
+      "assets/20260918_100627.jpg",
+      "assets/20260918_100639.jpg"
+    ]
+  },
+  {
     id: "ikea-vuku-skubb",
     nebenanUrl: "https://nebenan.de/feed/41096979",
     price: 20,

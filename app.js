@@ -255,8 +255,10 @@ function renderProducts() {
       : `<a class="button button-primary" href="${whatsappUrl(message)}" target="_blank" rel="noreferrer">${whatsappIcon}<span>${t("reserve")}</span></a>`;
 
     card.innerHTML = `
-      <div class="product-media">
-        ${product.image.src ? `<img src="${product.image.src}" alt="${title}" loading="lazy" decoding="async">` : ""}
+      <div class="product-media${product.images?.length ? " product-media-gallery" : ""}">
+        ${product.images?.length
+          ? `<div class="product-photos">${product.images.map((src, index) => `<a href="${src}" target="_blank" rel="noreferrer"><img src="${src}" alt="${title} (${index + 1}/${product.images.length})" loading="lazy" decoding="async"></a>`).join("")}</div>`
+          : product.image.src ? `<img src="${product.image.src}" alt="${title}" loading="lazy" decoding="async">` : ""}
         <div class="media-label">
           <span>${product.image.label}</span>
           <span class="price">${formatPrice(product)}</span>

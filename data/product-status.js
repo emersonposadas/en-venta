@@ -1,5 +1,15 @@
 window.PRODUCT_STATUS = [
   {
+    id: "ikea-armario-espejo-1",
+    name: "Closet IKEA 1 con puertas de espejo",
+    sold: false,
+  },
+  {
+    id: "ikea-armario-espejo-2",
+    name: "Closet IKEA 2 con puertas de espejo",
+    sold: false,
+  },
+  {
     id: "ikea-vuku-skubb",
     name: "2 armarios IKEA VUKU con organizadores SKUBB",
     sold: false,

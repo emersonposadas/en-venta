@@ -279,6 +279,27 @@ h1 {
   object-position: center;
 }
 
+.product-photos {
+  display: flex;
+  height: 100%;
+  gap: 0.25rem;
+  padding-bottom: 3.5rem;
+}
+
+.product-photos a {
+  flex: 1;
+  min-width: 0;
+}
+
+.product-photos img {
+  object-fit: contain;
+}
+
+.product-photos a:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: -3px;
+}
+
 .media-label {
   position: absolute;
   inset: auto 1rem 1rem 1rem;
